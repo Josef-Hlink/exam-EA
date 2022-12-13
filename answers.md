@@ -136,3 +136,123 @@ The Hamming distance is defined as the number of bits that differ between two so
 While it is true that the Hamming distance is equal to the number of mutations required to reach the optimum in both problems (i.e. the number of zeros in the current solution), this is not the only factor that determines the quality of search.
 </p> </details> <br>
 
+
+### Question 4*
+
+> Suppose the computational complexity of an optimization algorithm is $O(n^2 \log n)$, where $n$ represents the number of elements in a decision vector. Which interpretation(s) is/are correct?
+> Suppose $c$ and $C$ are two constants, and $0 < c < C \ll \infty$ in the following statements.
+
+<!-- A -->
+A. There exists a constant $C>0$ such that for all $n$ the expected runtime is at most $Cn^2 \log n$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+The complexity on an algorithm is defined as the worst-case runtime of an algorithm.
+The runtime of an algorithm with complexity O(n^2 log n), multiplied by a constant C, is then at most C times (n^2 log n).
+This is more or less true by definition.
+</p> </details> <br>
+
+<!-- B -->
+B. There exists a constant $C>0$ such that for all $n$ the expected runtime is at least $Cn^2 \log n$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+See previous answer.
+</p> </details> <br>
+
+<!-- C -->
+C. There exists a constant $c>0$ such that for all $n$ the expected runtime is at most $cn^2 \log n$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+This is just a repeat of statement A...
+</p> </details> <br>
+
+<!-- D -->
+D. There exists a constant $c>0$ such that for all $n$ the expected runtime is at least $cn^2 \log n$.  
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+Just a repeat of statement B...
+</p> </details> <br>
+
+
+`*` Caveat: The question introduces two constants that share a relation, but this relation is never used in any of the statements.
+I am assuming that this is a mistake, and that some $c$'s and $C$'s should be mixed, but I'm not sure which ones.
+
+
+### Question 5
+
+> We denote $T(n) = 2n \times n + 3C$ and $T'(n) = n + 1000$ as the running time of the algorithms $A$ and $B$, respectively, where $n$ is the dimension of the given problem and $C$ is constant. Which statement(s) is/are correct?
+
+<!-- A -->
+A. The algorithm $A$ is linear time $O(n)$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+It is quadratic time (O(n^2)).
+</p> </details> <br>
+
+<!-- B -->
+B. The algorithm $A$ is quadratic time $O(n^2)$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+<i>n</i> is multiplied by itself, so the complexity is quadratic.
+</p> </details> <br>
+
+<!-- C -->
+C. The algorithm $B$ is linear time $O(n)$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+<i>n</i> is multiplied by 1, so the complexity is linear.
+</p> </details> <br>
+
+<!-- D -->
+D. $A$ is faster than $B$ for large $n$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+While it is true that <i>A</i> is faster than <i>B</i> for small <i>n</i> (assuming <i>C</i> is small too), this is not the case for large <i>n</i>, because <i>A</i> is quadratic, while <i>B</i>'s performance scales linearly.
+</p> </details> <br>
+
+
+### Question 6
+
+> Given a bitstring (ie., individual) $a = (01011100)$ and a mutation operator $m_p: \{0,1\}^8 \rightarrow \{0,1\}^8$ that inverts single bits independently of each other with probability $p \in [0,1]$. Which statement(s) is/are correct?
+
+<!-- A -->
+A. The total probability that 3 out of 8 bits are changed by mutation is $15p^3(1-p)^5$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+The answer is almost correct, but the number of combinations is wrong.
+The probability for flipping x out of y bits with probability p is y choose x p^x (1-p)^(y-x).
+8 choose 3 is 56, not 15, so the probability is 56p^3(1-p)^5.
+</p> </details> <br>
+
+<!-- B -->
+B. $P(a \rightarrow 10101011)$ is $p^7$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+7 bits are flipped in this case, so the probability of flipping all those exact 7 bits is p^7.
+</p> </details> <br>
+
+<!-- C -->
+C. $P(a \rightarrow a)$ is $1$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+The probability of flipping no bits is (1-p)^8, not 1.
+It is possible, but the probability p would have to be set to 0.
+</p> </details> <br>
+
+<!-- D -->
+D. The total probability that $i (0 \leq i \leq 8, i \in \N)$ out of 8 bits are changed by mutation is $8Ci \times p^i (1-p)^{8-i}$.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+This is the correct formula for the probability of flipping i out of 8 bits with probability p.
+</p> </details> <br>
