@@ -137,9 +137,9 @@ While it is true that the Hamming distance is equal to the number of mutations r
 </p> </details> <br>
 
 
-### Question 4*
+### Question 4
 
-> Suppose the computational complexity of an optimization algorithm is $O(n^2 \log n)$, where $n$ represents the number of elements in a decision vector. Which interpretation(s) is/are correct?
+> Suppose the computational complexity of an optimization algorithm is $\Theta(n^2 \log n)$, where $n$ represents the number of elements in a decision vector. Which interpretation(s) is/are correct?
 > Suppose $c$ and $C$ are two constants, and $0 < c < C \ll \infty$ in the following statements.
 
 <!-- A -->
@@ -147,9 +147,8 @@ A. There exists a constant $C>0$ such that for all $n$ the expected runtime is a
 
 <details> <summary> <i> see answer </i> </summary>
 <b>True</b> <br> <p>
-The complexity on an algorithm is defined as the worst-case runtime of an algorithm.
-The runtime of an algorithm with complexity O(n^2 log n), multiplied by a constant C, is then at most C times (n^2 log n).
-This is more or less true by definition.
+The Theta-complexity on an algorithm is defined as the bounds on the worst-case runtime of an algorithm.
+Therefore, the expected runtime of an algorithm is always at most the Theta-complexity of the algorithm with upper bound Cn^2 log n.
 </p> </details> <br>
 
 <!-- B -->
@@ -157,28 +156,24 @@ B. There exists a constant $C>0$ such that for all $n$ the expected runtime is a
 
 <details> <summary> <i> see answer </i> </summary>
 <b>False</b> <br> <p>
-See previous answer.
+C denotes the upper bound, not the lower bound.
 </p> </details> <br>
 
 <!-- C -->
 C. There exists a constant $c>0$ such that for all $n$ the expected runtime is at most $cn^2 \log n$.
 
 <details> <summary> <i> see answer </i> </summary>
-<b>True</b> <br> <p>
-This is just a repeat of statement A...
+<b>False</b> <br> <p>
+c denotes the lower bound, not the upper bound.
 </p> </details> <br>
 
 <!-- D -->
 D. There exists a constant $c>0$ such that for all $n$ the expected runtime is at least $cn^2 \log n$.  
 
 <details> <summary> <i> see answer </i> </summary>
-<b>False</b> <br> <p>
-Just a repeat of statement B...
+<b>True</b> <br> <p>
+c indeed denotes the lower bound, and the expected runtime is always at least the Theta-complexity of the algorithm with lower bound cn^2 log n.
 </p> </details> <br>
-
-
-`*` Caveat: The question introduces two constants that share a relation, but this relation is never used in any of the statements.
-I am assuming that this is a mistake, and that some $c$'s and $C$'s should be mixed, but I'm not sure which ones.
 
 
 ### Question 5
