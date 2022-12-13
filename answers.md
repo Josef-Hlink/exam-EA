@@ -1,9 +1,3 @@
----
-title: "Evolutionary Algorithms - Practice Exam 2022"
-author: "Josef H"
-date: "2022-13-12"
----
-
 # Evolutionary Algorithms - Practice Exam 2022
 
 ## Multiple choice - 20 questions with 60 points
@@ -102,7 +96,7 @@ This is because the probability of finding a better solution is very low, and th
 
 ### Question 3
 
-> Two state-of-the-art discrete problems are OneMax ($f_\mathrm{OM}(\mathbf(x) = \sum_{i=1}^n x_i)$) and BinaryValue ($f_\mathrm{BV}(\mathbf{x}) = \sum_{i=1}^n x_i \cdot 2^{n-i}$). Which statement(s) is/are correct regarding solving these two problems by EAs?
+> Two state-of-the-art discrete problems are OneMax ( $f_\mathrm{OM}(\mathbf{x}) = \sum_{i=1}^n x_i$ ) and BinaryValue ( $f_\mathrm{BV}(\mathbf{x}) = \sum_{i=1}^n x_i \cdot 2^{n-i}$ ). Which statement(s) is/are correct regarding solving these two problems by EAs?
 
 <!-- A -->
 A. Compared to $f_\mathrm{BV}$, $f_\mathrm{OM}$ is easier to optimize, because there is a strong fitness-distance correlation in $f_\mathrm{OM}$.
