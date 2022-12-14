@@ -61,18 +61,19 @@ It is important to note however, that some variations evolutionary algorithms do
 A. Exploration relates to local search and exploitation relates to global search.
 
 <details> <summary> <i> see answer </i> </summary>
-<b>True</b> <br> <p>
-<i>Exploration</i> is defined as the process of searching for new solutions, and <i>exploitation</i> is defined as the process of using the current best solution to find a better solution.
-Local search describes the process of searching for a better solution in the neighborhood of the current parent solution, while global search describes the process of selecting the best solutions from the entire population.
+<b>False</b> <br> <p>
+It could be argued that, yes, exploration relates to local search and exploitation relates to global search in the sense that locally, we want to explore the neighborhood of the current best solution, and globally, we want to exploit the positions of our best solutions.
+However, this is not the correct definition of exploration and exploitation.
+Exploration relates to the search for a better solution, and exploitation relates to the use of the best solutions in the population.
+This "use of the best solutions" can be understood as a global search, but it is not the same as a global search.
 </p> </details> <br>
 
 <!-- B -->
 B. Crossover operators have the ability to jump out of a local optimum.
 
 <details> <summary> <i> see answer </i> </summary>
-<b>False</b> <br> <p>
-Crossover operators do not have the ability to jump out of a local optimum.
-They are used to combine the best solutions from the population, and therefore they do not have the ability to search for a better solution outside of a local optimum if the population is already stuck.
+<b>True</b> <br> <p>
+When two or more candidate solutions that are stuck in a local optimum are combined, the resulting solution can be better than the parent solutions, because the problem space is not necessarily convex.
 </p> </details> <br>
 
 <!-- C -->
@@ -102,12 +103,9 @@ This is because the probability of finding a better solution is very low, and th
 A. Compared to $f_\mathrm{BV}$, $f_\mathrm{OM}$ is easier to optimize, because there is a strong fitness-distance correlation in $f_\mathrm{OM}$.
 
 <details> <summary> <i> see answer </i> </summary>
-<b>True</b> <br> <p>
+<b>False</b> <br> <p>
 Fitness-distance correlation is defined as the correlation between the fitness and the number of mutations required to reach the optimum.
-In <i>OM</i>, the fitness is equal to the number of ones in the solution, and the number of mutations required to reach the optimum is equal to the number of zeros in the solution.
-Therefore, there is a very strong fitness-distance correlation in <i>OM</i>.
-This is not the case in BV, where the fitness is equal to the sum of the binary values of the solution, and the number of mutations required to reach the optimum is equal to the number of zeros in the solution.
-Therefore, there is no strong fitness-distance correlation in <i>BV</i>.
+Both <i>OneMax</i> and <i>BinaryValue</i> have a strong fitness-distance correlation, because the fitness of a solution is directly proportional to the number of mutations required to reach the optimum, as more ones in the solution means that the solution is closer to the optimum.
 </p> </details> <br>
 
 <!-- B -->
@@ -131,9 +129,9 @@ While it is true that each variable in a decision vector has a different weight 
 D. $f_\mathrm{OM}$ and $f_\mathrm{BV}$ have the same difficulty to optimize, as only the Hamming distance to the optimum determines the quality of search.
 
 <details> <summary> <i> see answer </i> </summary>
-<b>False</b> <br> <p>
+<b>True</b> <br> <p>
 The Hamming distance is defined as the number of bits that differ between two solutions.
-While it is true that the Hamming distance is equal to the number of mutations required to reach the optimum in both problems (i.e. the number of zeros in the current solution), this is not the only factor that determines the quality of search.
+It is true that the Hamming distance is equal to the number of mutations required to reach the optimum in both problems (i.e. the number of zeros in the current solution), and for both problems, the fitness is directly proportional to the Hamming distance.
 </p> </details> <br>
 
 
@@ -168,7 +166,7 @@ c denotes the lower bound, not the upper bound.
 </p> </details> <br>
 
 <!-- D -->
-D. There exists a constant $c>0$ such that for all $n$ the expected runtime is at least $cn^2 \log n$.  
+D. There exists a constant $c>0$ such that for all $n$ the expected runtime is at least $cn^2 \log n$.
 
 <details> <summary> <i> see answer </i> </summary>
 <b>True</b> <br> <p>
@@ -251,3 +249,76 @@ D. The total probability that $i (0 \leq i \leq 8, i \in \N)$ out of 8 bits are 
 <b>True</b> <br> <p>
 This is the correct formula for the probability of flipping i out of 8 bits with probability p.
 </p> </details> <br>
+
+
+### Question 7
+
+> Given a parent population size $\mu$ and an offspring population size $\lambda$. Suppose one and only one individual is initialized as an optimum at the 0th generation, what is the number of generations needed for the optimum to fill the whole population? (Mutation and crossover are not considered)
+
+<!-- A -->
+A. $\mu,\lambda$-selection needs $\frac{\ln \lambda}{\ln \lambda/\mu}$ generations.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+The formula is correct.
+</p> </details> <br>
+
+<!-- B -->
+B. $\mu,\lambda$-selection needs $\frac{\ln \lambda}{\ln \mu/\lambda}$ generations.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+The formula is wrong, mu and lambda are swapped.
+</p> </details> <br>
+
+<!-- C -->
+C. Proportional selection need $\lambda \ln \lambda$ generations.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>True</b> <br> <p>
+The formula is correct.
+</p> </details> <br>
+
+<!-- D -->
+D. Proportional selection need $\frac{\ln \mu}{\ln \mu/\lambda}$ generations.
+
+<details> <summary> <i> see answer </i> </summary>
+<b>False</b> <br> <p>
+The formula is wrong, mu and lambda are swapped, and then this would be the formula for $\mu,\lambda$-selection.
+</p> </details> <br>
+
+
+### Question 8
+
+> To analyze a (1+1) gene
+
+
+## Rapidfire
+
+8: B
+
+9: A, B, D
+
+10: A, C, D
+
+11: A, D
+
+12: B, D
+
+13: A, B, D
+
+14: A, C
+
+15: B, C, D --- [A, B, C was right]
+
+16: B, C
+
+17: C, D --- [A, C was right]
+
+18: B, C --- [C, D was right]
+
+19: A, C, D
+
+20: B, C
+
+
